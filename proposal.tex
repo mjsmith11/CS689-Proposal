@@ -311,7 +311,6 @@
 % correct bad hyphenation here
 \hyphenation{op-tical net-works semi-conduc-tor}
 
-
 \begin{document}
 %
 % paper title
@@ -389,9 +388,13 @@ The abstract goes here.
 
 
 
-\section{Problem Description (From Preliminary Project)}
-With Internet technologies that are common in today’s society, social media platforms have become a widely-used communication medium. Included in this communication is information regarding natural disasters as they unfold. However, these data are often too large or noisy for real-time analysis by humans. Previous works have produced methods of filtering out content relevant to emergencies and detecting emergencies \cite{Avvenuti}. This work will seek to use locations mentioned in social media posts in order to identify the most heavily affected areas of a natural disaster regions in order to aid in the allocation of emergency response resources. This will require processing content in order to find the portions that identify locations as well as associating these mentioned locations with map coordinates. Twitter will be used as the source of social media data. The analysis will include text of the tweets and provided metadata. Multimedia elements such as images and videos will not be considered. The types of disasters to analyze have not yet been determined. This is because the study will be forced to rely on sample data from past disasters, and data availability has not yet been explored.
+\section{Problem Description}
+With Internet technologies that are common in today’s society, social media platforms have become a widely-used communication medium. Included in this communication is information regarding natural disasters as they unfold. However, these data are often too large or noisy for real-time analysis by humans. Previous works have produced methods of filtering out content relevant to emergencies and detecting emergencies \cite{Avvenuti}. Other works have proposed methods breaking down large events into smaller subevents associated geographic information in some cases \cite{Pohl,Khurdiya,Hua}. This work will seek to determine criteria for prioritization of the subevents in order to aid in the allocation of emergency response resources.  Since this research will depend on external sources for event and subevent detection, the social media platforms for analysis cannot be predetermined. The platforms will be limited to those for which event and subevent detection is available. The analysis in this wook will include text content and provided metadata. Multimedia elements such as images and videos will not be considered. The types of disasters to analyze have not yet been determined. This is because the study will be forced to rely on sample data from past disasters in an ex post facto fashion, and data availability has not yet been explored.
 
+\section{Research Objectives}
+\subsection{Get Event/Subevent Detection}
+\subsection{Get Data}
+\subsection{Get Training Set}
 \subsection{Subsection Heading Here}
 Subsection text here.
 
@@ -499,9 +502,9 @@ Subsubsection text here.
 
 \section{Facilities and Special Resources}
 \subsection{Computing Resources}
-Due to the nature of social media as a data source, computing resources will be required. As an example, the data for a single object (tweet) of Twitter data occupies around 4KB including metadata \cite{Imran}. If the dataset corresponding to a crisis contains millions of objects, gigabytes of space will be needed for storing it. Processing of incoming data must also be considered. The rate of data production varies greatly, and peaks in data velocity need to be handled. One of the largest known peaks on Twitter came in 2012 during Hurricane Sandy with data being produced at a rate of 16,000 tweets per minute \cite{Imran}. 
+Due to the nature of social media as a data source, computing resources will be required. As an example, the data for a single object (tweet) of Twitter data occupies around 4KB including metadata \cite{Imran}. If the dataset corresponding to a crisis contains millions of objects, gigabytes of space will be needed for storing it. Processing of incoming data must also be considered. The rate of data production varies greatly, and peaks in data velocity need to be handled. One of the largest known peaks on Twitter came in 2012 during Hurricane Sandy with data being produced at a rate of 16,000 tweets per minute \cite{Imran}. Although this research will be conducted in a ex post facto format, the volatility of incoming data velocity will be simulated.
 
-The computing power for this project will be obtained from a cloud computing service such as Amazon Web Services. This choice is made in order to take advantage of the scalability and maintenance advantages of cloud computing. Using cloud computing services is expected to be more cost effective than purchasing hardware due to the ability to increase or decrease the amount of resources at any time. 
+The computing solution for this research needs to be able to accommodate the volume and velocity of  social media data. The data will need to be received from the source, processed, and stored in real time. 
 
 \subsection{Privacy Concerns}
 
@@ -541,4 +544,14 @@ The authors would like to thank...
 % that's all folks
 \end{document}
 
-
+/begin{comment}
+Unincorporated Thoughts
+Does disaster relief use the data already
+Does this imply that tech savvy people will get more aid. what about groups that don't commonly use social media
+Why we don't like top 5 by cluster distance in Pohl
+Define event & subevent
+assume detection of event and subevent is given
+Prediction algo approach 
+what criteria for prioritization
+simulate volatility of data velocity
+/end{comment}
