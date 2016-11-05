@@ -389,20 +389,17 @@ The abstract goes here.
 
 
 \section{Problem Description}
-With Internet technologies that are common in today’s society, social media platforms have become a widely-used communication medium. Included in this communication is information regarding natural disasters as they unfold. However, these data are often too large or noisy for real-time analysis by humans. Previous works have produced methods of filtering out content relevant to emergencies and detecting emergencies \cite{Avvenuti}. Other works have proposed methods breaking down large events into smaller subevents associated geographic information in some cases \cite{Pohl,Khurdiya,Hua}. This work will seek to determine criteria for prioritization of the subevents in order to aid in the allocation of emergency response resources.  Since this research will depend on external sources for event and subevent detection, the social media platforms for analysis cannot be predetermined. The platforms will be limited to those for which event and subevent detection is available. The analysis in this wook will include text content and provided metadata. Multimedia elements such as images and videos will not be considered. The types of disasters to analyze have not yet been determined. This is because the study will be forced to rely on sample data from past disasters in an ex post facto fashion, and data availability has not yet been explored.
+With Internet technologies that are common in today’s society, social media platforms have become a widely-used communication medium. Included in this communication is information regarding natural disasters as they unfold. However, these data are often too large or noisy for real-time analysis by humans. Previous works have produced methods of filtering out content relevant to emergencies and detecting emergencies \cite{Avvenuti}. Other works have proposed methods breaking down large events into smaller subevents associated geographic information in some cases \cite{Pohl,Khurdiya,Hua}. This work will seek to develop a method for prioritization of the subevents in order to aid in the allocation of emergency response resources.  Since this research will depend on external sources for event and subevent detection, the social media platforms for analysis cannot be predetermined. The platforms will be limited to those for which event and subevent detection is available. The analysis in this wook will include text content and provided metadata. Multimedia elements such as images and videos will not be considered. The types of disasters to analyze have not yet been determined. This is because the study will be forced to rely on sample data from past disasters in an ex post facto fashion, and data availability has not yet been explored.
 
 \section{Research Objectives}
 \subsection{Event and Subevent Detection}
+In order to prioritize subevents, a set of subevents first needs to be identified. An event, identified by time and location, serves as the context for subevents \cite{Pohl}, thus events must be detected before any subevents can be identified. The objective of this portion of the project is to use techniques developed in a selection of past research in order to create a system that can be used in order to identify events and subevents from raw social media data. This system will be used to produce the sets of subevents that will later be prioritized.
 \subsection{Dataset Procurement}
+Samples of data from social media sources during emergency events will be collected. Events and subevents must be able to be detected by the system described previously. Since this study does not seek to analyze or improve event and subevent identification, datasets with no relevant events or subevents or difficult to detect events or subevents are not required.
 \subsection{Survey Emergency Management Officials}
 \subsection{Prioritization Method Development}
 \subsection{Prioritization Method Testing}
-\subsection{Subsection Heading Here}
-Subsection text here.
-
-
-\subsubsection{Subsubsection Heading Here}
-Subsubsection text here.
+%dataset
 
 
 % An example of a floating figure using the graphicx package.
@@ -548,7 +545,6 @@ The authors would like to thank...
 
 /begin{comment}
 Unincorporated Thoughts
-"determine criteria"
 Does disaster relief use the data already
 Does this imply that tech savvy people will get more aid. what about groups that don't commonly use social media
 Why we don't like top 5 by cluster distance in Pohl
@@ -557,4 +553,6 @@ assume detection of event and subevent is given
 Prediction algo approach 
 what criteria for prioritization
 simulate volatility of data velocity
+do I like the bit about types of disasters in problem description
+External validity
 /end{comment}
