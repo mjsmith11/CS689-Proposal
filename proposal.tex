@@ -407,6 +407,20 @@ In order to compare the algorithms, the data obtained from the survey of emergen
 
 
 \section{Literature Review}
+In one of the first studies on social media data, \cite{hughes2009twitter} detected specific patterns in Twitter data during mass emergencies. This study was published in 2009. Since then, numerous studies have proposed methods of analyzing social media data in order to provide useful information to emergency responders.
+\subsection{Event Detection}
+An event can be defined as "An occurrence causing changes in the volume of text data that discusses the associated topic at a specific time. This occurrence is characterized by topic and time, and often associated with entities such as people and location" \cite{dou}. Previous studies have produced methods of detecting events in streams of documents such as news articles. These methods do not work as well with social media streams as the data source due to the large data volumes, high data velocity, and "short, noisy, and unstructured content" \cite{Imran}. As a result, many studies propose methods of detecting events in streaming data.
+
+One approach to event detection involves keyword burst detection. This approach assumes that new events are associated with abrupt increases in keyword frequencies \cite{Imran}. A system to detect earthquakes in Australia and New Zealand  is introduced in \cite{robinson} which works by detecting bursts for the keywords 'earthquak' and '\#eqnz' which are stems of words used to describe earthquakes in the area. \cite{marcus2011twitinfo} introduced the TwitInfo system which accepts keywords from the user and reports events when it detects spikes in the number of tweets containing the provided keywords. This system does not focus on emergency detection but could be configured with keywords to do so.
+
+In \cite{becker2011beyond}, clustering algorithms are used to create groups from incoming tweets. Features are computed for each cluster in order to determine which clusters correspond to real-world events. This approach seeks to avoid detection of keyword spikes that are unrelated to an actual event.
+
+\cite{Weng} and \cite{Corley} use signal processing approaches for detecting social media events.
+\subsection{Subevent Detection}
+Events can, in many cases, be divided into refined parts called subevents \cite{Pohl}. These subevents may span multiple locations and require a plan for emergency management. Researchers have proposed methods of identifying subevents in the context of an event. 
+
+In \cite{Khurdiya}, a method for identifying subevents using Conditional Random Fields is proposed. In \cite{Pohl,Hua}, subevent detection methods employing clustering techniques are proposed. Cluster distance is suggested in \cite{Pohl} for finding the most important items (e.g. pictures or videos) within a subevent cluster, but no method is proposed for prioritizing the clusters themselves.
+
 \section{Importance/Benefits of the Study}
 Research on processing social media data for emergency management should be conducted in order to enable officials to use this data during disaster situations. Emergency responders have expressed interest in taking advantage of social media as a data source, but have been largely unable to do so due to the nature of the data.
 
