@@ -407,7 +407,7 @@ In order to compare the algorithms, the data obtained from the survey of emergen
 
 
 \section{Literature Review}
-In one of the first studies on social media data, \cite{hughes2009twitter} detected specific patterns in Twitter data during mass emergencies. This study was published in 2009. Since then, numerous studies have proposed methods of analyzing social media data in order to provide useful information to emergency responders.
+In one of the first studies on social media data, \cite{hughes2009twitter} detected specific patterns in Twitter data during mass emergencies. This study was published in 2009. Since then, numerous studies have proposed methods of analyzing social media data in order to provide useful information to emergency responders. In these studies, methods have been proposed for detecting events and subevents as well as making predictions. However, few methods have been proposed for assigning priority to the subevents.
 \subsection{Event Detection}
 An event can be defined as "An occurrence causing changes in the volume of text data that discusses the associated topic at a specific time. This occurrence is characterized by topic and time, and often associated with entities such as people and location" \cite{dou}. Previous studies have produced methods of detecting events in streams of documents such as news articles. These methods do not work as well with social media streams as the data source due to the large data volumes, high data velocity, and "short, noisy, and unstructured content" \cite{Imran}. As a result, many studies propose methods of detecting events in streaming data.
 
@@ -420,6 +420,9 @@ In \cite{becker2011beyond}, clustering algorithms are used to create groups from
 Events can, in many cases, be divided into refined parts called subevents \cite{Pohl}. These subevents may span multiple locations and require a plan for emergency management. Researchers have proposed methods of identifying subevents in the context of an event. 
 
 In \cite{Khurdiya}, a method for identifying subevents using Conditional Random Fields is proposed. In \cite{Pohl,Hua}, subevent detection methods employing clustering techniques are proposed. Cluster distance is suggested in \cite{Pohl} for finding the most important items (e.g. pictures or videos) within a subevent cluster, but no method is proposed for prioritizing the clusters themselves.
+
+\subsection{Supervised Learning Algorithms}
+Previous studies have employed various supervised learning algorithms to classify data retrieved from social media. ESA \cite{yin}  uses naïve Bayes and SVM to determine if the data contains information on impacted infrastructure. EMERSE \cite{caragea} classifies data according to the type of situation such as medical emergency, people trapped, etc. AIDR \cite{Imran2014a} uses random forests to extract data objects that are considered informative. Tweedr \cite{ashktorab} uses logistic regression to extract tweets that contain damage or casualty information. Although each of these studies applies a supervised learning algorithm to its respective datasets, none of them use the learning algorithm in order to assign priority to subevents.
 
 \section{Importance/Benefits of the Study}
 Research on processing social media data for emergency management should be conducted in order to enable officials to use this data during disaster situations. Emergency responders have expressed interest in taking advantage of social media as a data source, but have been largely unable to do so due to the nature of the data.
@@ -569,15 +572,15 @@ The authors would like to thank...
 
 /begin{comment}
 Unincorporated Thoughts
-Does disaster relief use the data already
+;Does disaster relief use the data already
 *1 Does this imply that tech savvy people will get more aid. what about groups that don't commonly use social media
-Why we don't like top 5 by cluster distance in Pohl
-Define event & subevent
+;Why we don't like top 5 by cluster distance in Pohl
+;Define event & subevent
 Definition Section in section I
-assume detection of event and subevent is given
-Prediction algo approach 
-what criteria for prioritization
-simulate volatility of data velocity
+	supervised learning algo.
+;assume detection of event and subevent is given
+;Prediction algo approach 
+;what criteria for prioritization
 do I like the bit about types of disasters in problem description
 External validity maybe the survey
 In special resources ask for a specialist to do the surveying! or design questions
@@ -586,4 +589,6 @@ why we don't need IRB in research design
 Criterion for comparison
 Does IEEE references get a section number
 Cross Validation design?
+list out algos
+italicize system names
 /end{comment}
