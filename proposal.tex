@@ -418,7 +418,7 @@ Events can, in many cases, be divided into refined parts called subevents \cite{
 In \cite{Khurdiya}, a method for identifying subevents using Conditional Random Fields is proposed. In \cite{Pohl,Hua}, subevent detection methods employing clustering techniques are proposed. Cluster distance is suggested in \cite{Pohl} for finding the most important items (e.g. pictures or videos) within a subevent cluster, but no method is proposed for prioritizing the clusters themselves.
 
 \subsection{Supervised Learning Algorithms}
-Previous studies have employed various supervised learning algorithms to classify data retrieved from social media. \textit{ESA} \cite{yin}  uses na\"{i}ve Bayes and SVM to determine if the data contains information on impacted infrastructure. \textit{EMERSE} \cite{caragea} classifies data according to the type of situation such as medical emergency, people trapped, etc. \textit{AIDR} \cite{Imran2014a} uses random forests to extract data objects that are considered informative. \textit{Tweedr} \cite{ashktorab} uses logistic regression to extract tweets that contain damage or casualty information. Although each of these studies applies a supervised learning algorithm to its respective datasets, none of them use the learning algorithm in order to assign priority to subevents.
+Previous studies have employed various supervised learning algorithms to classify data retrieved from social media. \textit{ESA} \cite{yin}  uses Na\"{i}ve Bayes and SVM to determine if the data contains information on impacted infrastructure. \textit{EMERSE} \cite{caragea} classifies data according to the type of situation such as medical emergency, people trapped, etc. \textit{AIDR} \cite{Imran2014a} uses random forests to extract data objects that are considered informative. \textit{Tweedr} \cite{ashktorab} uses logistic regression to extract tweets that contain damage or casualty information. Although each of these studies applies a supervised learning algorithm to its respective datasets, none of them use the learning algorithm in order to assign priority to subevents.
 
 \section{Importance/Benefits of the Study}
 Research on processing social media data for emergency management should be conducted in order to enable officials to use this data during disaster situations. Emergency responders have expressed interest in taking advantage of social media as a data source, but have been largely unable to do so due to the nature of the data.
@@ -543,9 +543,11 @@ The survey will present the subevents grouped by events. The order of the subeve
 
 This portion of the research will need Institutional Review Board approval because human subjects will be responding to the surveys.
 \subsection{Algorithm Comparison Experiments}
-A cross-validation approach will be used for comparing the selected algorithms' performance. The subevents will be randomly divided into 5 groups of 10 subevents. From the 5 groups of subevents, 4 groups will be chosen as the training set and 1 group will be chosen as the validation set. Each algorithm will be trained using the subevents from the groups in the training sets and their respective priorities determined by the survey. Then each algorithm will be used to assign a priority to each subevent in the validation set. Each of these assignments will be correct or incorrect as determined by the survey data, and each algorithm will receive a score from 0 to 10 corresponding to the number of correct classifications. This procedure will be repeated for 4 times such that each group is used once as the validation set.
+A cross-validation approach will be used for comparing the selected algorithms' performance. The subevents will be randomly divided into 5 groups of 10 subevents. From the 5 groups of subevents, 4 groups will be chosen as the training set and 1 group will be chosen as the validation set. Each algorithm will be trained using the subevents from the groups in the training sets and their respective priorities as determined by the survey. Then each algorithm will be used to assign a priority to each subevent in the validation set. Each of these assignments will be correct or incorrect as determined by the survey data, and each algorithm will receive a score from 0 to 10 corresponding to the number of correct classifications. This procedure will be repeated for 4 times such that each group is used once as the validation set.
 
 This process will be repeated 99 times with a new random selection of the 5 groups of subevents each time.
+
+Due to the analysis used for the data obtained by the emergency management survey, it is possible for a subevent to have a decimal value for priority. If one of these values occurs in a training set, the algorithm will be trained with the whole number priorities immediately above and below the actual value. If one of these values occurs in a validation set, the whole number priorities immediately above and below the actual value will both be accepted as correct.
 
 \section{Data Analysis}
 There will be no data analysis for the Event and Subevent Detection or Disaster Dataset Procurement. The Survey of Emergency Management Officals and Algorithm Comparison Experiments will both include data analysis.
@@ -554,7 +556,9 @@ The results of the survey will be used for training and validating the learning 
 \subsection{Algorithm Comparison Experiments}
 The experimental design in this study will be a within subject designs. That is multiple treatments will be applied to the same experimental group one at a time. In this case, the experimental group will be a set of data divided into a training set and a validation set. The treatments will be the supervised learning algorithms. The observations will be the scores out of 10 achieved by each algorithm.
 
-Since 100 selections of subevent groups are used and each algorithm receives 5 scores per selection, each algorithm will have 500 total scores. The means of each algorithm's scores will be compared using Student's T-Tests to determine whether statistically significant differences exist in the performance of the algorithms.
+A preliminary selection of supervised learning algorithms or treatments includes Conditional Random Fields, Na\"{i}ve Bayes, Support Vector Machines, Random Forests, and Logistical Regression. These are selected because they have been employed for other applications within the mass emergency social media data domain. This list is subject to change during the course of the research.
+
+Since 100 selections of subevent groups are used and each algorithm receives 5 scores per selection, each algorithm will have distribution of 500 total scores. A series of chi-squared tests will be used to compare algorithms find significant differences in the distributions. Chi-squared tests are appropriate since the independent variable, the algorithm, represents categorical data and the dependent variable, the number of correct classifications, uses a discrete scale. Additional analysis will be required to determine which distribution is superior when chi-squared tests identify statistically significant differences.
 
 \section{Schedule}
 The schedule for this project spans 12 months and contains 1 month of flex time to compensate for any parts of the research that take longer than estimated. The schedule is detailed below.
@@ -608,7 +612,7 @@ do I like the bit about types of disasters in problem description
 It is a source not THE source to go with *1
 ;why we don't need IRB in research design
 ;Criterion for comparison
-list out algos
+list out algos-some citations here
 italicize system names
 plagiarism including example proposal in facilities
 /end{comment}
