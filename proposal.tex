@@ -387,7 +387,7 @@ Email: mjsmith17@bsu.edu}}
 \section{Problem Description}
 With Internet technologies that are common in today’s society, social media platforms have become a widely-used communication medium. Included in this communication is information regarding natural disasters as they unfold. However, these data are often too large or noisy for real-time analysis by humans. Previous works have produced methods of filtering out content relevant to emergencies and detecting emergencies \cite{Avvenuti}. Other works have proposed methods breaking down large events into smaller subevents associated geographic information in some cases \cite{Pohl,Khurdiya,Hua}. 
 
-This work will seek to evaluate and compare selected supervised learning algorithms for predicting the prioritization of subevents by emergency responders. Since this research will depend on external sources for event and subevent detection, the social media platforms for analysis cannot be predetermined. The platforms will be limited to those for which event and subevent detection is available. The types of disasters for analysis have not been determined and will be limited by the properties of the event and subevent detection that is used.
+This work will seek to evaluate and compare selected supervised learning algorithms for predicting the prioritization of subevents detected from social media sources by emergency responders. Since this research will depend on external sources for event and subevent detection, the social media platforms for analysis cannot be predetermined. The platforms will be limited to those for which event and subevent detection is available. The types of disasters for analysis have not been determined and will be limited by the properties of the event and subevent detection that is used.
 
 
 \section{Research Objectives}
@@ -421,7 +421,7 @@ In \cite{Khurdiya}, a method for identifying subevents using Conditional Random 
 Previous studies have employed various supervised learning algorithms to classify data retrieved from social media. \textit{ESA} \cite{yin}  uses Na\"{i}ve Bayes and SVM to determine if the data contains information on impacted infrastructure. \textit{EMERSE} \cite{caragea} classifies data according to the type of situation such as medical emergency, people trapped, etc. \textit{AIDR} \cite{Imran2014a} uses random forests to extract data objects that are considered informative. \textit{Tweedr} \cite{ashktorab} uses logistic regression to extract tweets that contain damage or casualty information. Although each of these studies applies a supervised learning algorithm to its respective datasets, none of them use the learning algorithm in order to assign priority to subevents.
 
 \section{Importance/Benefits of the Study}
-Research on processing social media data for emergency management should be conducted in order to enable officials to use this data during disaster situations. Emergency responders have expressed interest in taking advantage of social media as a data source, but have been largely unable to do so due to the nature of the data.
+Research on processing social media data for emergency management should be conducted in order to enable officials to use this data during disaster situations. Emergency responders have expressed interest in taking advantage of social media as a data source in addition to existing data sources, but have been largely unable to do so due to the nature of the data. 
 
 As an example, the United Nations Office for the Coordination of Humanitarian Affairs (OCHA), which is responsible for managing United Nations disaster response efforts, has shown interest in using social media as a source of disaster information. As investigated in \cite{vieweg2014}, OCHA included Twitter as a source of information when making assessments during Typhoon Yolanda which impacted the Philippines in November of 2013. The tweets obtained were read and labeled by human volunteers. These people were able to process 3,678 tweets; searches performed by \cite{vieweg2014} found 2,302,569 tweets related to the Typhoon Yolanda situation were available at the time of the manual analysis. In interviews regarding twitter data related to Typhoon Yolanda, \cite{vieweg2014} found that OCHA officials felt that twitter data provided little return for the time investment which they felt was too large.
 
@@ -556,7 +556,7 @@ The results of the survey will be used for training and validating the learning 
 \subsection{Algorithm Comparison Experiments}
 The experimental design in this study will be a within subject designs. That is multiple treatments will be applied to the same experimental group one at a time. In this case, the experimental group will be a set of data divided into a training set and a validation set. The treatments will be the supervised learning algorithms. The observations will be the scores out of 10 achieved by each algorithm.
 
-A preliminary selection of supervised learning algorithms or treatments includes Conditional Random Fields, Na\"{i}ve Bayes, Support Vector Machines, Random Forests, and Logistical Regression. These are selected because they have been employed for other applications within the mass emergency social media data domain. This list is subject to change during the course of the research.
+A preliminary selection of supervised learning algorithms or treatments includes Conditional Random Fields, Na\"{i}ve Bayes, Support Vector Machines, Random Forests, and Logistical Regression. These are selected because they have been employed for other applications within the mass emergency social media data domain \cite{yin,caragea,Imran2014a,ashktorab},. This list is subject to change during the course of the research.
 
 Since 100 selections of subevent groups are used and each algorithm receives 5 scores per selection, each algorithm will have distribution of 500 total scores. A series of chi-squared tests will be used to compare algorithms find significant differences in the distributions. Chi-squared tests are appropriate since the independent variable, the algorithm, represents categorical data and the dependent variable, the number of correct classifications, uses a discrete scale. Additional analysis will be required to determine which distribution is superior when chi-squared tests identify statistically significant differences.
 
@@ -599,17 +599,17 @@ The deliverable of this study will be technical report including a conclusion on
 /begin{comment}
 Unincorporated Thoughts
 ;Does disaster relief use the data already
-*1 Does this imply that tech savvy people will get more aid. what about groups that don't commonly use social media
+;*1 Does this imply that tech savvy people will get more aid. what about groups that don't commonly use social media
 ;Why we don't like top 5 by cluster distance in Pohl
 ;Define event & subevent
-Definition Section in section I
+;Definition Section in section I
 	supervised learning algo.
 ;assume detection of event and subevent is given
 ;Prediction algo approach 
 ;what criteria for prioritization
 do I like the bit about types of disasters in problem description
 ;External validity maybe the survey
-It is a source not THE source to go with *1
+;It is a source not THE source to go with *1
 ;why we don't need IRB in research design
 ;Criterion for comparison
 list out algos-some citations here
