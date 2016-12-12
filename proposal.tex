@@ -387,7 +387,7 @@ Email: mjsmith17@bsu.edu}}
 \section{Problem Description}
 With Internet technologies that are common in today’s society, social media platforms have become a widely-used communication medium. Included in this communication is information regarding natural disasters as they unfold. However, these data are often too large or noisy for real-time analysis by humans. Previous works have produced methods of filtering out content relevant to emergencies and detecting emergencies \cite{Avvenuti}. Other works have proposed methods breaking down large events into smaller subevents associated geographic information in some cases \cite{Pohl,Khurdiya,Hua}. 
 
-This work will seek to evaluate and compare selected supervised learning algorithms for predicting the prioritization of subevents detected from social media sources by emergency responders. Since this research will depend on external sources for event and subevent detection, the social media platforms for analysis cannot be predetermined. The platforms will be limited to those for which event and subevent detection is available. The types of disasters for analysis have not been determined and will be limited by the properties of the event and subevent detection that is used.
+This work will seek to evaluate and compare selected supervised learning algorithms for predicting the prioritization by emergency responders of subevents detected from social media sources. Since this research will depend on external sources for event and subevent detection, the social media platforms for analysis cannot be predetermined. The platforms will be limited to those for which event and subevent detection is available. The types of disasters for analysis have not been determined and will be limited by the properties of the event and subevent detection that is used.
 
 
 \section{Research Objectives}
@@ -397,7 +397,7 @@ In order to prioritize subevents, a set of subevents first needs to be identifie
 \subsection{Disaster Dataset Procurement}
 From the data source identified in the previous portion of the project, a sample of detected subevents will be selected in this in this phase of the research. Since this study does not seek to analyze or improve event or subevent detection, the sample need not contain examples of data without any relevant events.
 \subsection{Survey of Emergency Management Officials}
-Prioritization of subevents requires the ability to make the determination that one subevent is more important than another subevent and should be prioritized higher. This data will come from emergency responders who determine priorities regularly. A survey will be used to seek information from these people. It will also ask respondents to assign priorities to subevents in samples from the datasets acquired previously.
+Prioritization of subevents requires the ability to make the determination that one subevent is more important than another subevent and should be prioritized higher. This information will come from emergency responders who determine priorities regularly. A survey will be used to seek information from these people. It will also ask respondents to assign priorities to subevents in samples from the datasets acquired previously.
 \subsection{Algorithm Comparison Experiments}
 In order to compare the algorithms, the data obtained from the survey of emergency management officials will serve two purposes. First, portions of the data will be used as training data for the supervised learning algorithms. Secondly, a different portion of the survey data will be used as true values for evaluating the performance of each selected algorithm. Performance metrics will be calculated for each algorithm and analyzed in order to identify any statistically significant differences in performance.
 
@@ -411,7 +411,7 @@ One approach to event detection involves keyword burst detection. This approach 
 
 In \cite{becker2011beyond}, clustering algorithms are used to create groups from incoming tweets. A set of features are computed for each cluster in order to determine which clusters correspond to real-world events. This approach seeks to avoid detection of keyword spikes that are unrelated to an actual event.
 
-Weng and Lee and Corley et al. \cite{Weng} and \cite{Corley} use signal processing approaches for detecting social media events.
+Two previous studies \cite{Weng,Corley}  use signal processing approaches for detecting social media events.
 \subsection{Subevent Detection}
 Events can, in many cases, be divided into refined parts called subevents \cite{Pohl}. These subevents may span multiple locations and require a plan for emergency management. Researchers have proposed methods of identifying subevents in the context of an event. 
 
@@ -423,7 +423,7 @@ Previous studies have employed various supervised learning algorithms to classif
 \section{Importance/Benefits of the Study}
 Research on processing social media data for emergency management should be conducted in order to enable officials to use this data during disaster situations. Emergency responders have expressed interest in taking advantage of social media as a data source in addition to existing data sources, but have been largely unable to do so due to the nature of the data. 
 
-As an example, the United Nations Office for the Coordination of Humanitarian Affairs (OCHA), which is responsible for managing United Nations disaster response efforts, has shown interest in using social media as a source of disaster information. As investigated in \cite{vieweg2014}, OCHA included Twitter as a source of information when making assessments during Typhoon Yolanda which impacted the Philippines in November of 2013. The tweets obtained were read and labeled by human volunteers. These people were able to process 3,678 tweets; searches performed by \cite{vieweg2014} found 2,302,569 tweets related to the Typhoon Yolanda situation were available at the time of the manual analysis. In interviews regarding twitter data related to Typhoon Yolanda, \cite{vieweg2014} found that OCHA officials felt that twitter data provided little return for the time investment which they felt was too large.
+As an example, the United Nations Office for the Coordination of Humanitarian Affairs (OCHA), which is responsible for managing United Nations disaster response efforts, has shown interest in using social media as a source of disaster information. As investigated in \cite{vieweg2014}, OCHA included Twitter as a source of information when making assessments during Typhoon Yolanda which impacted the Philippines in November of 2013. The tweets obtained were read and labeled by human volunteers. These people were able to process 3,678 tweets; searches performed by \cite{vieweg2014} found 2,302,569 tweets related to the Typhoon Yolanda situation were available at the time of the manual analysis. In interviews regarding Twitter data related to Typhoon Yolanda, \cite{vieweg2014} found that OCHA officials felt that twitter data provided little return for the time investment which they felt was too large.
 
 This research will contribute to the goal of providing emergency management agencies, such as OCHA, concise and usable reports from social media sources in a timely manner during emergency situations.
 
@@ -543,7 +543,7 @@ The survey will present the subevents grouped by events. The order of the subeve
 
 This portion of the research will need Institutional Review Board approval because human subjects will be responding to the surveys.
 \subsection{Algorithm Comparison Experiments}
-A cross-validation approach will be used for comparing the selected algorithms' performance. The subevents will be randomly divided into 5 groups of 10 subevents. From the 5 groups of subevents, 4 groups will be chosen as the training set and 1 group will be chosen as the validation set. Each algorithm will be trained using the subevents from the groups in the training sets and their respective priorities as determined by the survey. Then each algorithm will be used to assign a priority to each subevent in the validation set. Each of these assignments will be correct or incorrect as determined by the survey data, and each algorithm will receive a score from 0 to 10 corresponding to the number of correct classifications. This procedure will be repeated for 4 times such that each group is used once as the validation set.
+A cross-validation approach will be used for comparing the selected algorithms' performance. The subevents will be randomly divided into 5 groups of 10 subevents. From the 5 groups of subevents, 4 groups will be chosen as the training set and the remaining group will as the validation set. Each algorithm will be trained using the subevents from the groups in the training sets and their respective priorities as determined by the survey. Then each algorithm will be used to assign a priority to each subevent in the validation set. Each of these assignments will be correct or incorrect as determined by the survey data, and each algorithm will receive a score from 0 to 10 corresponding to the number of correct classifications. This procedure will be repeated for 4 times such that each group is used once as the validation set.
 
 This process will be repeated 99 times with a new random selection of the 5 groups of subevents each time.
 
@@ -556,7 +556,7 @@ The results of the survey will be used for training and validating the learning 
 \subsection{Algorithm Comparison Experiments}
 The experimental design in this study will be a within subject designs. That is multiple treatments will be applied to the same experimental group one at a time. In this case, the experimental group will be a set of data divided into a training set and a validation set. The treatments will be the supervised learning algorithms. The observations will be the scores out of 10 achieved by each algorithm.
 
-A preliminary selection of supervised learning algorithms or treatments includes Conditional Random Fields, Na\"{i}ve Bayes, Support Vector Machines, Random Forests, and Logistical Regression. These are selected because they have been employed for other applications within the mass emergency social media data domain \cite{yin,caragea,Imran2014a,ashktorab},. This list is subject to change during the course of the research.
+A preliminary selection of supervised learning algorithms or treatments includes Conditional Random Fields, Na\"{i}ve Bayes, Support Vector Machines, Random Forests, and Logistical Regression. These are selected because they have been employed for other applications within the mass emergency social media data domain \cite{yin,caragea,Imran2014a,ashktorab}. This list is subject to change during the course of the research.
 
 Since 100 selections of subevent groups are used and each algorithm receives 5 scores per selection, each algorithm will have distribution of 500 total scores. A series of chi-squared tests will be used to compare algorithms find significant differences in the distributions. Chi-squared tests are appropriate since the independent variable, the algorithm, represents categorical data and the dependent variable, the number of correct classifications, uses a discrete scale. Additional analysis will be required to determine which distribution is superior when chi-squared tests identify statistically significant differences.
 
@@ -612,7 +612,7 @@ do I like the bit about types of disasters in problem description
 ;It is a source not THE source to go with *1
 ;why we don't need IRB in research design
 ;Criterion for comparison
-list out algos-some citations here
+;list out algos-some citations here
 italicize system names
 plagiarism including example proposal in facilities
 /end{comment}
