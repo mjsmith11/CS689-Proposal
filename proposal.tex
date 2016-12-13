@@ -385,9 +385,9 @@ Email: mjsmith17@bsu.edu}}
 
 
 \section{Problem Description}
-With Internet technologies that are common in today’s society, social media platforms have become a widely-used communication medium. Included in this communication is information regarding natural disasters as they unfold. However, these data are often too large or noisy for real-time analysis by humans. Previous works have produced methods of filtering out content relevant to emergencies and detecting emergencies \cite{Avvenuti}. Other works have proposed methods breaking down large events into smaller subevents associated geographic information in some cases \cite{Pohl,Khurdiya,Hua}. 
+With Internet technologies that are common in today’s society, social media platforms have become a widely-used communication medium. Included in this communication is information regarding natural disasters as they unfold. However, these data are often too large or noisy for real-time analysis by humans. Previous works have produced methods of filtering out content relevant to emergencies and detecting emergencies \cite{Avvenuti}. Other works have proposed methods breaking down large events into smaller subevents with associated geographic information in some cases \cite{Pohl,Khurdiya,Hua}. 
 
-This work will seek to evaluate and compare selected supervised learning algorithms for predicting the prioritization by emergency responders of subevents detected from social media sources. Since this research will depend on external sources for event and subevent detection, the social media platforms for analysis cannot be predetermined. The platforms will be limited to those for which event and subevent detection is available. The types of disasters for analysis have not been determined and will be limited by the properties of the event and subevent detection that is used.
+This work will seek to evaluate and compare the accuracy of selected supervised learning algorithms for predicting the prioritization by emergency responders of subevents detected from social media sources. Since this research will depend on external sources for event and subevent detection, the social media platforms for analysis cannot be predetermined. The platforms will be limited to those for which event and subevent detection is available. The types of disasters for analysis have not been determined and will be limited by the properties of the event and subevent detection that is used.
 
 
 \section{Research Objectives}
@@ -397,7 +397,7 @@ In order to prioritize subevents, a set of subevents first needs to be identifie
 \subsection{Disaster Dataset Procurement}
 From the data source identified in the previous portion of the project, a sample of detected subevents will be selected in this in this phase of the research. Since this study does not seek to analyze or improve event or subevent detection, the sample need not contain examples of data without any relevant events.
 \subsection{Survey of Emergency Management Officials}
-Prioritization of subevents requires the ability to make the determination that one subevent is more important than another subevent and should be prioritized higher. This information will come from emergency responders who determine priorities regularly. A survey will be used to seek information from these people. It will also ask respondents to assign priorities to subevents in samples from the datasets acquired previously.
+Prioritization of subevents requires the ability to make the determination that one subevent is actually more important than another subevent and should be prioritized higher. This information will come from emergency responders who determine priorities regularly. A survey will be used to seek information from these people. It will ask respondents to assign priorities to subevents in the sample acquired previously.
 \subsection{Algorithm Comparison Experiments}
 In order to compare the algorithms, the data obtained from the survey of emergency management officials will serve two purposes. First, portions of the data will be used as training data for the supervised learning algorithms. Secondly, a different portion of the survey data will be used as true values for evaluating the performance of each selected algorithm. Performance metrics will be calculated for each algorithm and analyzed in order to identify any statistically significant differences in performance.
 
@@ -409,11 +409,11 @@ An event can be defined as "An occurrence causing changes in the volume of text 
 
 One approach to event detection involves keyword burst detection. This approach assumes that new events are associated with abrupt increases in keyword frequencies \cite{Imran}. A system to detect earthquakes in Australia and New Zealand  is introduced in \cite{robinson} which works by detecting bursts for the keywords 'earthquak' and '\#eqnz' which are stems of words used to describe earthquakes in the area. Marcus et al. \cite{marcus2011twitinfo} introduced the \textit{TwitInfo} system which accepts keywords from the user and reports events when it detects spikes in the number of tweets containing the provided keywords. This system does not focus on emergency detection but could be configured with keywords to do so.
 
-In \cite{becker2011beyond}, clustering algorithms are used to create groups from incoming tweets. A set of features are computed for each cluster in order to determine which clusters correspond to real-world events. This approach seeks to avoid detection of keyword spikes that are unrelated to an actual event.
+In \cite{becker2011beyond}, clustering algorithms are used to create groups from incoming tweets. A set of features is computed for each cluster in order to determine which clusters correspond to real-world events. This approach seeks to avoid detection of keyword spikes that are unrelated to an actual event.
 
 Two previous studies \cite{Weng,Corley}  use signal processing approaches for detecting social media events.
 \subsection{Subevent Detection}
-Events can, in many cases, be divided into refined parts called subevents \cite{Pohl}. These subevents may span multiple locations and require a plan for emergency management. Researchers have proposed methods of identifying subevents in the context of an event. 
+Events can, in many cases, be divided into refined parts called subevents \cite{Pohl}. These subevents may span multiple locations and require a unique plan for emergency management. Researchers have proposed methods of identifying subevents in the context of an event. 
 
 In \cite{Khurdiya}, a method for identifying subevents using Conditional Random Fields is proposed. In \cite{Pohl,Hua}, subevent detection methods employing clustering techniques are proposed. Cluster distance is suggested in \cite{Pohl} for finding the most important items (e.g. pictures or videos) within a subevent cluster, but no method is proposed for prioritizing the clusters themselves.
 
@@ -525,11 +525,11 @@ This research will contribute to the goal of providing emergency management agen
 \subsection {Event and Subevent Detection}
 The goal of this phase of the research is to be able to obtain results of methods for event and subevent detection found in literature. This study will use one of two approaches for achieving this goal. The first possibility is to locate a data source where results of subevent detection systems can be retrieved. If this is not possible, the second option would be to implement a detection system from previous literature capable of producing the required data.
 \subsection{Disaster Dataset Procurement}
-From the data source identified in the previous section, a sample of data will be obtained. The sample size will be 50 subevents. If a data source is identified in the previous phase, a simple random sample of events in the data source large enough to yield at least 50 subevents will be chosen. If a detection system was implemented in the previous phase, the "Major Disaster Declarations" in 2016 available from FEMA will be considered the population.\footnote{https://www.fema.gov/disasters/grid/year/2016?field\_disaster\_type\_term\_tid\_1=All} From this population, a simple random sample of events large enough to yield at least 50 subevents will be chosen. Social media data from the selected events will be processed by the system implemented in the previous section in order to obtain the subevents. In the event that the obtainted sample contains more than 50 subevents, a subset of the sample will be randomly selected for the research such that the subset contains exactly 50 subevents.
+Using the result of the previous section, a sample of data will be obtained. The sample size will be 50 subevents. If a data source is identified in the previous phase, a simple random sample of events in the data source large enough to yield at least 50 subevents will be chosen. If a detection system was implemented in the previous phase, the "Major Disaster Declarations" in 2016 available from FEMA will be considered the population.\footnote{https://www.fema.gov/disasters/grid/year/2016?field\_disaster\_type\_term\_tid\_1=All} From this population, a simple random sample of events large enough to yield at least 50 subevents will be chosen. Social media data from the selected events will be processed by the system implemented in the previous section in order to obtain the subevents. In the event that the obtainted sample contains more than 50 subevents, a subset of the sample will be randomly selected for the research such that the subset contains exactly 50 subevents.
 \subsection{Survey of Emergency Management Officials}
 According to the United States Geological Survey, the United States has over 3000 counties or county equivalents (boroughs, parishes, etc.).\footnote{https://www2.usgs.gov/faq/categories/9799/2971} A simple random sample of 2000 of these counties will be selected and contacted to seek willingness to participate in a survey. Willing counties will then be sent a survey. A response rate of 20\% would yield a sample of 400 counties or county equivalents.
 
-The surveys will ask participants to assign each of the 50 subevents in the sample a priority on a 5 point scale:
+The surveys will ask participants to assign a priority to each of the 50 subevents in the sample on a 5 point scale:
 \begin{enumerate}
 	\item Critical - This subevent requires immediate attention from emergency responders reassigning people and resources if necessary.
 	\item High - This subevent requires attention from emergency responders within 1 day
@@ -539,15 +539,15 @@ The surveys will ask participants to assign each of the 50 subevents in the samp
 \end{enumerate}
 This scale is arbitrary, but it is used so that respondents all use the same scale for ranking the events. It does not include description such as 'potential loss of life' or 'damage to infrastructure' because this survey seeks to determine how these factors influence prioritization.
 
-The survey will present the subevents grouped by events. The order of the subevents will be randomized within their groups and events will be presented in random order.
+The survey will present the subevents grouped by events. The order of the subevents will be randomized within their groups and event groups will be presented in random order.
 
 This portion of the research will need Institutional Review Board approval because human subjects will be responding to the surveys.
 \subsection{Algorithm Comparison Experiments}
-A cross-validation approach will be used for comparing the selected algorithms' performance. The subevents will be randomly divided into 5 groups of 10 subevents. From the 5 groups of subevents, 4 groups will be chosen as the training set and the remaining group will as the validation set. Each algorithm will be trained using the subevents from the groups in the training sets and their respective priorities as determined by the survey. Then each algorithm will be used to assign a priority to each subevent in the validation set. Each of these assignments will be correct or incorrect as determined by the survey data, and each algorithm will receive a score from 0 to 10 corresponding to the number of correct classifications. This procedure will be repeated for 4 times such that each group is used once as the validation set.
+A cross-validation approach will be used for comparing the selected algorithms' performance. The subevents will be randomly divided into 5 groups of 10 subevents. From the 5 groups of subevents, 4 groups will be chosen as the training set and the remaining group will be used as the validation set. Each algorithm will be trained using the subevents from the groups in the training set and their respective priorities as determined by the survey. Then each algorithm will be used to assign a priority to each subevent in the validation set. Each of these assignments will be correct or incorrect as determined by the survey data, and each algorithm will receive a score from 0 to 10 corresponding to the number of correct classifications. This procedure will be repeated for 4 times such that each group is used once as the validation set.
 
 This process will be repeated 99 times with a new random selection of the 5 groups of subevents each time.
 
-Due to the analysis used for the data obtained by the emergency management survey, it is possible for a subevent to have a decimal value for priority. If one of these values occurs in a training set, the algorithm will be trained with the whole number priorities immediately above and below the actual value. If one of these values occurs in a validation set, the whole number priorities immediately above and below the actual value will both be accepted as correct.
+Due to the analysis used for the data obtained by the emergency management survey, it is possible for a subevent to have a decimal value for priority which was calculated by taking the mean of two values on the 5 point priority scale. If one of these values occurs in a training set, the algorithm will be trained with the whole number priorities immediately above and below the actual value. If one of these values occurs in a validation set, the whole number priorities immediately above and below the actual value will both be accepted as correct.
 
 \section{Data Analysis}
 There will be no data analysis for the Event and Subevent Detection or Disaster Dataset Procurement. The Survey of Emergency Management Officals and Algorithm Comparison Experiments will both include data analysis.
@@ -558,13 +558,13 @@ The experimental design in this study will be a within subject designs. That is 
 
 A preliminary selection of supervised learning algorithms or treatments includes Conditional Random Fields, Na\"{i}ve Bayes, Support Vector Machines, Random Forests, and Logistical Regression. These are selected because they have been employed for other applications within the mass emergency social media data domain \cite{yin,caragea,Imran2014a,ashktorab}. This list is subject to change during the course of the research.
 
-Since 100 selections of subevent groups are used and each algorithm receives 5 scores per selection, each algorithm will have distribution of 500 total scores. A series of chi-squared tests will be used to compare algorithms find significant differences in the distributions. Chi-squared tests are appropriate since the independent variable, the algorithm, represents categorical data and the dependent variable, the number of correct classifications, uses a discrete scale. Additional analysis will be required to determine which distribution is superior when chi-squared tests identify statistically significant differences.
+Since 100 selections of subevent groups are used and each algorithm receives 5 scores per selection, each algorithm will have a distribution of 500 total scores. A series of chi-squared tests will be used to compare algorithms find significant differences in the distributions. Chi-squared tests are appropriate since the independent variable, the algorithm, represents categorical data and the dependent variable, the number of correct classifications, uses a discrete scale. Additional analysis will be required to determine which distribution is superior when chi-squared tests identify statistically significant differences.
 
 \section{Schedule}
 The schedule for this project spans 12 months and contains 1 month of flex time to compensate for any parts of the research that take longer than estimated. The schedule is detailed below.
 \begin{itemize}
 	\item Event and Subevent Detection - 1/1 to 1/31  
-	\item Dataset Procurement - 2/1 to 3/15  
+	\item Disaster Dataset Procurement - 2/1 to 3/15  
 	\item Survey of Emergency Management Officials - 3/16 to 6/15  
 	\item Advanced Research \& Setup of Algorithms - 6/1 to 7/15 
 	\item Algorithm Experiments - 7/16 to 9/30 
@@ -572,11 +572,11 @@ The schedule for this project spans 12 months and contains 1 month of flex time 
 	\item Report Generation - 11/1 to 11/30 
 	\item Flex Time - 12/1 to 12/31 
 \end{itemize}
-The Data Analysis and Conclusions item is scheduled for two time spans. The first of these is for analysis of the results of the survey of emergency management officials. The second is for the analysis of the results of the algorithm experiments.	
+The Data Analysis and Conclusions item is scheduled for two different time spans. The first of these is for analysis of the results of the survey of emergency management officials. The second is for the analysis of the results of the algorithm experiments.	
 
 
 \section{Facilities and Special Resources}
-Hardware capacity is required for storing datasets. Using Twitter as an example, a single data object occupies around 4KB including metadata \cite{Imran}. One dataset investigated in \cite{vieweg2014} contained millions of data objects. The processing resources need to be powerful enough to run the algorithms for event and subevent detection if necessary as well as the selected supervised learning algorithms in the allotted time.
+Computing hardware will be required for this study. It needs to have enough drive capacity to store the datasets. Using Twitter as an example, a single data object occupies around 4KB including metadata \cite{Imran}. One dataset investigated in \cite{vieweg2014} contained millions of data objects. The processing resources need to be powerful enough to run the algorithms for event and subevent detection if necessary as well as the selected supervised learning algorithms in a reasonable amount of time.
 
 Implementations of the selected supervised learning algorithms will be required so that they can be evaluated.
 
@@ -607,12 +607,12 @@ Unincorporated Thoughts
 ;assume detection of event and subevent is given
 ;Prediction algo approach 
 ;what criteria for prioritization
-do I like the bit about types of disasters in problem description
+;do I like the bit about types of disasters in problem description
 ;External validity maybe the survey
 ;It is a source not THE source to go with *1
 ;why we don't need IRB in research design
 ;Criterion for comparison
 ;list out algos-some citations here
-italicize system names
+;italicize system names
 plagiarism including example proposal in facilities
 /end{comment}
